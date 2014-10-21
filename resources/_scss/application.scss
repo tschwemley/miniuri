@@ -1,0 +1,114 @@
+@import 'bourbon/bourbon';
+@import 'base/base';
+@import 'neat/neat';
+@import 'config';
+@import 'fonts';
+
+body {
+	margin: 0;
+}
+
+header {
+	min-height: 100%;
+	background-image: url('/images/bg2.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+
+.wrapper {
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+.container {
+	padding: 60px;
+	min-height: 100%;
+	top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+	@include outer-container;
+	max-width: 720px;
+}
+
+.logo {
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 130px;
+	margin: 0px auto 60px;
+	background: url('http://placehold.it/200x130');
+}
+
+.sub-tag {
+	font-size: 28px;
+	font-family: $neuton;
+	font-family: $montserrat;
+	color: $white;
+}
+
+.form-wrapper {
+	@include outer-container;
+	max-width: 760px;
+	text-align: center;
+	margin: 40px auto;
+
+	form {
+		margin: 0 0 20px; 
+	}
+
+	.minify-uri {
+		@include span-columns(9);
+		height: 60px;
+		color: #71767e;
+		font-size: 14px;
+		padding: 0 25px;
+		font-family: inherit;
+		border-radius: 0;
+		border: #d2d2d2;
+		margin-right: 0;
+	}
+
+	.minify-submit {
+		@include span-columns(3);
+		height: 60px;
+		color: $white;
+		border-radius: 0;
+		box-shadow: none;
+		text-shadow: 0px 2px rgba(0,0,0,0.1);
+		font: 16px/60px $neuton;
+		font-weight: 800;
+		text-transform: uppercase;
+		padding: 0 25px;
+		background: $pomegranate;
+		border: none;
+		letter-spacing: 0.2em;
+		transition: all 0.2s linear;
+
+		&:hover {
+			background: lighten($pomegranate, 4%);
+		}
+	}
+
+	.minify-triangle {
+		position: relative;
+
+		&:before {
+			@include triangle(14px, white, left);
+			content: '';
+			position: absolute;
+			top: 25px;
+			left: -97px;
+			border-top: 5px solid transparent;
+			border-left: 5px solid $white;
+			border-right: 5px solid transparent;
+			z-index: 99;
+		}
+	}	
+}
