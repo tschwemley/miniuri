@@ -1,5 +1,9 @@
 <?php
+	ini_set('display_errors', 1);
 	require_once('../database/db.php');
+	require_once('../app/UriClass.php');
+
+	$uri = new UriClass($db);
 ?>
 
 <head>
@@ -10,7 +14,7 @@
 <header>
 	<div class="wrapper">
 		<div class="container">
-			<a class="logo" href="#"></a>
+			<a class="logo" href="http://miniuri.me"></a>
 			<h1>MINIMIZED URIs.</h1>
 			<div class="sub-tag">
 				Just for you.
@@ -18,7 +22,7 @@
 
 			<!-- Minify URI Form -->
 			<div class="form-wrapper">
-				<form>
+				<form method="post" action="http://miniuri.me">
 					<input class="minify-uri" name="uri" type="url" placeholder="Enter URI">
 					<span class="minify-triangle">
 						<input class="minify-submit" name="minify" type="submit" value="Minify">
@@ -26,6 +30,16 @@
 				</form>
 			</div>
 			<!-- End Minify URI Form -->
+
+			<div class="uri-text">
+			<?php
+
+			if (isset($_GET['short'])) {
+				$uri = 'http://miniuri.me/' . $_GET['short'];
+				echo "Awesome! Your miniuri is: <a href=\"$uri\">$uri</a>";
+			}
+			?>
+			</div>
 		</div>
 	</div>
 </header>
