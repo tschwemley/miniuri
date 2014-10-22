@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = 'myla092091';
-$dbName = 'urls';
+$dbName = 'miniuri';
 
 // Establish PDO database connection
 try {
