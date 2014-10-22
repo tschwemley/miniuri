@@ -48,7 +48,6 @@ header {
 
 .sub-tag {
 	font-size: 28px;
-	font-family: $neuton;
 	font-family: $montserrat;
 	color: $white;
 }
@@ -66,12 +65,12 @@ header {
 	.minify-uri {
 		@include span-columns(9);
 		height: 60px;
-		color: #71767e;
+		color: $pale-sky;
 		font-size: 14px;
 		padding: 0 25px;
 		font-family: inherit;
 		border-radius: 0;
-		border: #d2d2d2;
+		border: $alto;
 		margin-right: 0;
 	}
 
@@ -111,4 +110,20 @@ header {
 			z-index: 99;
 		}
 	}	
+}
+
+.uri-text {
+	font-size: 22px;
+	font-family: $montserrat;
+	color: $white;
+
+	>a {
+		color: darken($white, 25%);
+		font-family: $neuton;
+		font-weight: 400;
+	}
+
+	>a:hover {
+		text-decoration: underline;
+	}
 }

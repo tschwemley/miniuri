@@ -282,7 +282,6 @@ header {
 
 .sub-tag {
   font-size: 28px;
-  font-family: "Neuton", serif;
   font-family: "Montserrat, sans-serif";
   color: #fff; }
 
@@ -352,5 +351,16 @@ header {
       border-left: 5px solid #fff;
       border-right: 5px solid transparent;
       z-index: 99; }
+
+.uri-text {
+  font-size: 22px;
+  font-family: "Montserrat, sans-serif";
+  color: #fff; }
+  .uri-text > a {
+    color: #bfbfbf;
+    font-family: "Neuton", serif;
+    font-weight: 400; }
+  .uri-text > a:hover {
+    text-decoration: underline; }
 
 /*# sourceMappingURL=application.css.map */
