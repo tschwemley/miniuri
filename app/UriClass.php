@@ -87,6 +87,7 @@ class UriClass {
 		header('Location: ?short=' . $shortKey);
 	}
 
+	// Generate a short key for URI minimization
 	private function _getShortKey()
 	{
 		return substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 5);

@@ -3,6 +3,7 @@
 require_once 'db.php';
 
 
+// Create the table for holding uris
 $sql = "CREATE TABLE IF NOT EXISTS `uris` (
 			`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 			`uri` varchar(255) COLLATE latin1_bin DEFAULT NULL,

@@ -1,9 +1,10 @@
 <?php
 
-$host = 'localhost';
-$user = 'root';
-$pass = 'myla092091';
-$dbName = 'miniuri';
+// Enter your database credentials
+$host = '';
+$user = '';
+$pass = '';
+$dbName = '';
 
 // Establish PDO database connection
 try {
@@ -12,5 +13,6 @@ try {
 
 } catch (PDOException $e) {
 
+	echo 'Error connecting to database.';
 	die();
 }
