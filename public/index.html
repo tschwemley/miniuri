@@ -1,10 +1,3 @@
-<?php
-	require_once('../database/db.php');
-	require_once('../app/UriClass.php');
-
-	$uri = new UriClass($db);
-?>
-
 <head>
 <link rel="stylesheet" href="css/application.css">
 </head>
@@ -29,16 +22,6 @@
 				</form>
 			</div>
 			<!-- End Minify URI Form -->
-
-			<div class="uri-text">
-			<?php
-
-			if (isset($_GET['short'])) {
-				$uri = 'http://miniuri.me/' . $_GET['short'];
-				echo "Awesome! Your miniuri is: <a href=\"$uri\">$uri</a>";
-			}
-			?>
-			</div>
 		</div>
 	</div>
 </header>
