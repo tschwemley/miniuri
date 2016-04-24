@@ -1,47 +1,16 @@
-var util = require('util');
-var mysql = require('mysql');
-var dbCredentials = require('./db-credentials.js');
+var apiHandler = require('./lib/api-handler.js');
 
 exports.handler = function(event, context, callback) {
-  'use strict';
+  switch (event.method) {
+    case 'put':
+      apiHandler.putUri(event, context, callback);
+      break;
 
-  // Uri is a required parameter
-  if (event.uri === null || event.uri === 'undefined') {
-    callback("Missing uri parameter");
+    case 'get':
+      apiHandler.getUri(event, context, callback);
+      break;
+    
+    default:
+      callback("There was an error making the request");
   }
-
-  var connection = mysql.createConnection(dbCredentials);
-
-  connection.connect();
-
-  var shortKey = randomString(5);
-  var sql = 'INSERT INTO uris (uri, short_key) VALUES (?,?)';
-  var params = [event.uri, shortKey];
-
-  connection.query(sql, params, function(err, result) {
-    if (err) {
-      console.log("error: " + err);
-    } else {
-      console.log("result: " + result);
-
-      var resultObject = {
-        original_url: event.uri,
-        short_key: shortKey
-      };
-
-      callback(null, resultObject);
-    } 
-  });
-
-  connection.end();
 };
-
-function randomString(len, charSet) {
-    charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var randomStr = '';
-    for (var i = 0; i < len; i++) {
-    	var randomPoz = Math.floor(Math.random() * charSet.length);
-    	randomStr += charSet.substring(randomPoz,randomPoz+1);
-    }
-    return randomStr;
-}
