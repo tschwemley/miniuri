@@ -116,3 +116,7 @@ body {
   background: #B93C30;
   cursor: pointer;
 }
+
+.uri-display {
+  display: none;
+}
