@@ -11,7 +11,7 @@ $(function() {
     $.ajax({
       type: 'PUT',
       dataType: 'json',
-      url: "https://0t1shqh0wj.execute-api.us-east-1.amazonaws.com/Production/create-uri",
+      url: "https://0t1shqh0wj.execute-api.us-east-1.amazonaws.com/Production",
       data: "{\"uri\": \"" + uri + "\", \"method\": \"put\"}"
     })
     .fail(function(jqXHR, textStatus, error) {
