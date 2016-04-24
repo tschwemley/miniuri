@@ -6,8 +6,8 @@ exports.handler = function(event, context, callback) {
       apiHandler.putUri(event, context, callback);
       break;
 
-    case 'get':
-      apiHandler.getUri(event, context, callback);
+    case 'post':
+      apiHandler.postUri(event, context, callback);
       break;
     
     default:
