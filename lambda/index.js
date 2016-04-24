@@ -1,12 +1,12 @@
-'use strict';
-
 var util = require('util');
 var mysql = require('mysql');
 var dbCredentials = require('./db-credentials.js');
 
 exports.handler = function(event, context, callback) {
+  'use strict';
+
   // Uri is a required parameter
-  if (event.uri == null) {
+  if (event.uri === null || event.uri === 'undefined') {
     callback("Missing uri parameter");
   }
 
@@ -34,14 +34,14 @@ exports.handler = function(event, context, callback) {
   });
 
   connection.end();
-}
+};
 
 function randomString(len, charSet) {
     charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var randomString = '';
+    var randomStr = '';
     for (var i = 0; i < len; i++) {
     	var randomPoz = Math.floor(Math.random() * charSet.length);
-    	randomString += charSet.substring(randomPoz,randomPoz+1);
+    	randomStr += charSet.substring(randomPoz,randomPoz+1);
     }
-    return randomString;
+    return randomStr;
 }

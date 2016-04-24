@@ -1,6 +1,7 @@
-'use strict';
 
 $(function() {
+  'use strict';
+
   var uri;
 
   $('form').on('submit', function(e) {
@@ -19,8 +20,8 @@ $(function() {
     .success(function(data, textStatus) {
       console.log(data);
       var miniUri = "http://miniuri.me/" + data.short_key;
-      var successText = "Success! Your minimized uri is: <a href='" + miniUri 
-        + "'>" + miniUri;
+      var successText = "Success! Your minimized uri is: <a href='" + miniUri + 
+          "'>" + miniUri;
 
       $('.uri-display').html(successText).show();
     });
