@@ -3,3 +3,4 @@
 .vagrant
 node_modules
 lambda/db-credentials.js
+miniuri-lambda.zip
