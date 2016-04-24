@@ -2,3 +2,4 @@
 *.swp
 .vagrant
 node_modules
+lambda/db-credentials.js
